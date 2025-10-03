@@ -55,7 +55,7 @@
     <script>
         // Получаем каждый второй td из группы соседних td расположенных в таблице с id statsTable
         // https://developer.mozilla.org/ru/docs/Web/CSS/:nth-child
-        let examsScoreColumn = document.querySelectorAll("#statsTable td:nth-child(2)");
+        let examsScoreColumn = document.querySelectorAll("#statsTable td:nth-child()");
         for (const td of examsScoreColumn) {
 
             let passedExamIcon = td.nextElementSibling.firstElementChild;
