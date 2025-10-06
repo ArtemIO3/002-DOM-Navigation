@@ -75,12 +75,32 @@
         Задание:
         Добавьте строку "Итого" для таблицы statsTable. Напишите сценарий, которым выведите во вторую ячейку этой строки сумму всех числовых значений второй колонки.
         Выведите в третью ячейку этой строки сумму всех числовых значений из третьей колонки таблицы.
-        В div с id result выведите сообщение "Отдел 1 сделал больше продаж" или "Отдел 2 сделал больше продаж" на основе раннее вычисленных значений в строке "Итого".
+        В div с id result выведите сообщение "Отдел 1 сделал больше родаж" или "Отдел 2 сделал больше продаж" на основе раннее вычисленных значений в строке "Итого".
         Используйте любые методы, которые были рассмотрены на в прошлых уроках.
         */
-       let result = document.getElementById("statsTable");
-       result.insertAdjacentHTML("beforeend","<tr><td>Итог</td><td> </td> <td> </td></tr>")
-       
+    let result = document.getElementById("statsTable");
+    result.insertAdjacentHTML("beforeend","<tr><td>Итого</td><td></td> <td></td></tr>")
+        let sum1 = 0;
+        let sum2 =0;
+for(let i = 1; i < result.rows.length;i++)
+{ 
+    let row = result.rows[i];
+    let num1 = Number(row.cells[1].textContent)
+    let num2 = Number(row.cells[2].textContent)
+    sum1 += num1;
+    sum2 += num2;
+}
+let lastRow = result.rows[result.rows.length - 1];
+lastRow.cells[1].textContent = sum1;
+lastRow.cells[2].textContent = sum2;
+if(sum1 > sum2)
+{
+    document.write("Отдел 1 сделал больше продаж")
+}
+else
+{
+    document.write("Отдел 2 сделал больше продаж")
+}
     </script>
 </body>
 
